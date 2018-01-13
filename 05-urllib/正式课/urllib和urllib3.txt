@@ -29,4 +29,4 @@ urlencode,quote,unquote
 3.多次请求通用一个socket,利用http/1.1 connection:keep-alive 减少了握手次数和启动次数
 
 
-作业：用urllib3实现github登陆 
+作业：用urllib3实现github登陆
