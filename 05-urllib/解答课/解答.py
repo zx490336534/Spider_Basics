@@ -15,3 +15,20 @@ headers = {
 req = urllib.request.Request(url,headers=headers)
 response = urllib.request.urlopen(req)
 print(response.read())
+
+#处理cookie信息
+import http.cookiejar
+cookie = http.cookiejar.CookieJar() #声明一个CookieJar实例来保存cookie
+handler = urllib.request.HTTPCookieProcessor(cookie) #创建一个cookie处理器
+opener = urllib.request.build_opener(handler)
+response = opener.open(url)
+print(cookie)
+print(opener)
+
+
+import urllib3
+
+requests = urllib3.PoolManager()
+r = requests.request('GET',url)
+print('\n')
+print(r.data)
