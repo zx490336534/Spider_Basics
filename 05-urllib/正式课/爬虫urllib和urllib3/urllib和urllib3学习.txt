@@ -1,0 +1,29 @@
+一、爬虫库的学习
+http、urllib、urllib3
+只要不采用异步协程的，http访问都是使用的http.client
+
+对于爬虫库的要求：
+1、能正常发送http和https的请求
+2、设置不同的method提交
+3、设置代理
+4、设置headers
+5、处理cookie
+6、response的一些基本功能，status，html
+
+二、http包
+包含4个模块：client, server, cookiejar, cookies
+
+三、urllib
+包括5个模块，request, response, error, parse, robotparser
+题外话：基础的，系统的库文件一般不要修改，桌面应用程序，打包，修改部分比较隐秘的代码
+1、request
+2、parse
+urlencode，quote，unquote
+
+四、urllib3
+1、第三方库，还是使用的http库的client模块
+2、requests和pip使用的本库
+3、多次请求通用一个socket，利用 http/1.1， connection : keep-alive，减少了这种握手次数和启动次数
+4、支持file传输，线程安全。。。
+
+课后作业：用urllib3实现github登录，  下节课讲requests， aiohttp

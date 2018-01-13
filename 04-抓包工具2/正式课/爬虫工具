@@ -1,0 +1,67 @@
+一、抓包工具的原理
+首先是要通过代理设置，浏览器访问到这个抓包工具。
+访问：浏览器>>抓包工具>>服务器
+响应：服务器>>抓包工具>>浏览器
+1、http数据的抓包，协议本身就是明文传输的，所以直接转发
+2、https数据的抓包，协议本身在传输的过程中，是加密的，无法解析
+2.1  抓包工具对于浏览器来说，模拟服务端，使用抓包工具的证书进行加密
+2.2  抓包工具对于服务器来说，模拟客户端（浏览器），使用服务器的证书进行加密
+
+PS：抓包工具，监听特定机器的特定端口（ip:port，192.168.0.108:8888），任何的第三方设备只要能够访问这个代理，并且设置连接代理
+
+二、抓包工具的作用
+1、能够监听数据
+2、能够正确的解析数据并且展示
+3、能够过滤数据
+4、能够查找特定数据
+5、能够手动模拟发送数据
+6、能够中断浏览器的交互，修改当前的交互数据
+
+题外话：不要过度学习，只需要学习自己需要学习的东西就好了
+看到一个知识点A，研究过程中看到知识点B，又去研究知识点B，又发现C。。。。。。。
+
+三、准备工作
+1、浏览器要安装，并且安装代理工具
+2、防火墙，全部关闭
+3、检查IE代理设置
+
+四、Fiddler使用
+1、配置端口
+2、安装https证书，把证书安装到 “受信任的根证书颁发机构”
+3、三个主要窗口
+4、抓包时，不要过长，每个小的功能块进行一次抓包
+5、常用内置命令与断点命令
+	命令 |对应请求项|   介绍                                      | 示例
+	内置命令：
+	?      All       问号后边跟一个字符串，可以匹配出包含这个字符串的请求        ?google
+	>      Body      大于号后面跟一个数字，可以匹配出请求大小，大于这个数字请求	  >1000
+	<      Body      小于号跟大于号相反，匹配出请求大小，小于这个数字的请求	      <100
+	=      Result    等于号后面跟数字，可以匹配HTTP返回码	                      =200
+	@      Host      @后面跟Host，可以匹配域名				             @www.baidu.com
+	select Content-Type   select后面跟响应类型，可以匹配到相关的类型	      select image
+	cls    All       清空当前所有请求			                              cls
+	dump   All       将所有请求打包成saz压缩包，保存到“我的文档\Fiddler2\Captures”目录下 dump
+	start  All       开始监听请求				                              start
+	stop   All       停止监听请求	                                          stop
+
+	断点命令
+	bpafter All      bpafter后边跟一个字符串，表示中断所有包含该字符串的请求	  bpafter baidu（输入bpafter解除断点）
+	bpu     All      跟bpafter差不多，只不过这个是收到请求了，中断响应	      bpu baidu（输入bpu解除断点）
+	bps     Result   后面跟状态吗，表示中断所有是这个状态码的请求	          bps 200（输入bps解除断点）
+	bpv/bpm HTTP方法 只中断HTTP方法的命令，HTTP方法如POST、GET	              bpv get（输入bpv解除断点）
+	g/go    All      放行所有中断下来的请求                                 g
+
+五、charles的使用
+1、proxy >> proxy settings >> enable transparent HTTP proxying
+2、proxy >> proxy settings >> windows >> enable windows proxy
+3、proxy >> SSL proxy settings >> enable SSL proxying ，并且add， host：*  ， port：443
+4、安装证书，help >> SSL proxying >> install charles root certificate
+5、过滤， proxy >> recording settings
+6、断点， proxy >> breaking settings
+7、模拟慢网速状态
+8、map
+9、rewrite
+
+
+urllib2：python2里面的官方的，python3里面合并到urllib里面去了
+python3：只有urllib是官方的， urllib3是第三方

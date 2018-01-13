@@ -1,0 +1,49 @@
+一、发起请求
+1.技术方面
+协议：主要包括http、https、ftp、websocket等
+http(https):包括headers、refere、method、cookies\session等
+urllib
+requests
+aiohttp
+反爬虫：包括headers伪造，cookies运用，ip切换、图形验证码、手机验证码、js渲染、js加密和混淆、反行为分析
+selenium
+pyv8
+2.工具方面
+浏览器：chrome firefox ie phantomJS等
+抓包：charles fiddler
+手机端抓包：mitmproxy appium
+
+二、获取内容，内容解析
+1.技术方面
+正则表达式
+xpath
+pyquery
+css选择器
+beautifulsoup4 用xpath，html解析
+
+2.工具方面
+各种各样测试工具
+
+三、持久化内容
+文件、数据库
+1.技术方面
+数据库：包括mongodb、mysql、sqlite
+文件处理
+2.工具方面：
+对应数据库可视化
+
+四、整体项目
+1.技术方面
+潭州爬虫框架
+pyspider
+scrapy
+分布式爬虫
+
+2.工具方面
+docker
+
+五、其他方面
+1.异常处理
+2.编码处理，所有你能设置编码的地方，都设置成utf-8
+3.编程风格
+4.注释方面

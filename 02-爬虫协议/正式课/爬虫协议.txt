@@ -1,0 +1,45 @@
+一、ftp
+文件传输协议，ftp://ip
+使用ftplib库进行操作
+
+二、http
+超文本传输协议、无状态的、基于请求/响应模式的
+url：https://www.baidu.com/s?ie=utf-8（协议://host/资源目录?参数=值）
+www.baidu.com（二级域名） 和 baidu.com（一级域名）和 .com （顶级域名）
+
+Request Method:get,post,head,option,delete,put
+
+注意点：
+Status Code:
+200 = OK
+302 = 重定向（重要）
+    requests 默认的redirect_allow = True 默认允许跳转
+400 = 错误的请求
+500 = 服务器错误
+404 = 请求资源不存在
+401 = 请求被拒绝
+
+Content-Type:text/html; charset=utf-8 #编码要注意，有中文的时候，要转码成这个charset同样的编码
+
+cookies：是有失效时间
+维护cookies：在失效时间内，进行访问，重新刷新失效时间
+
+Referer：上一个页面的url
+
+User-Agent：一般固定值，但是有特例：有部分网站，当你爬多了以后会检测User-Agent
+
+
+三、https
+对于爬虫而言，http和https没区别
+https应用了ssl/tls加密
+https就两个作用：
+1.验证服务器是不是我想访问的服务器
+2.数据传输过程，进行数据加密
+
+需要设置 verify = False
+
+四、websocket
+html5出来提出来的技术，全双工
+
+
+课后作业：安装charles和fiddler
