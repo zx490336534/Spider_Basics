@@ -1,4 +1,4 @@
-一、爬虫库的学习
+﻿一、爬虫库的学习
 http、urllib、urllib3
 只要不采用异步协程的http访问都是使用的http.client
 
@@ -29,4 +29,4 @@ urlencode,quote,unquote
 3.多次请求通用一个socket,利用http/1.1 connection:keep-alive 减少了握手次数和启动次数
 
 
-作业：用urllib3实现github登陆
+作业：用urllib3实现github登陆 
