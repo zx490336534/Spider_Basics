@@ -1,0 +1,2 @@
+一、介绍
+requests库，python语言中，阻塞访问http和https最简单，最完善最好用最稳定，流传度最广的一个库
