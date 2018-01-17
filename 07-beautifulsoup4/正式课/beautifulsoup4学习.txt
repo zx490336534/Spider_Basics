@@ -1,0 +1,7 @@
+一、介绍
+beautifulsoup4，现在比较流行的一个html解析库，并且支持lxml，html5lib等第三方库
+基于DOM的，解析需要搜索整个文档相对而言，耗时比较久但是使用简单
+
+二、具体使用
+soup = BeautifulSoup(html_doc,features)
+features包括有11种：fast，html，html.parser,html5，html5lib，lxm，lxml-html，lxml-xml，permissive，strict，xml
