@@ -114,3 +114,18 @@ print(text)
 print(text.encode('raw_unicode_escape').decode('utf-8'))
 print(text.encode('iso-8859-1').decode('utf-8'))
 print(text.encode(r.encoding).decode('utf-8'))  #r.encoding有可能为None
+
+
+'''
+requests.util 模块 select_proxy 方法 中可以看出，代理的先后顺序为
+    譬如：http://httpbin.org/ 
+
+ 这个地址
+    1、匹配 http://httpbin.org 
+
+ ，ps: 后面没有 /
+    2、匹配 http
+    3、all://httpbin.org 
+
+    4、all
+'''
