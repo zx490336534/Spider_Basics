@@ -1,0 +1,16 @@
+一、介绍
+beautifulsoup4，现在是比较流浪的一个html解析库，并且支持lxml，html5lib等第三方库
+基于DOM的，解析的时候需要搜索整个文档，相对而言，比较耗时，但是使用起来很简单
+
+二、具体使用
+soup = BeautifulSoup(html_doc, 'lxml')
+features包括有11种：fast, html, html.parser, html5, html5lib, lxml, lxml-html, lxml-xml, permissive, strict, xml
+
+- bs4.builder._lxml.LXMLTreeBuilderForXML：xml、lxml-xml、
+            也支持fast、xml、permissive
+- bs4.builder._lxml.LXMLTreeBuilder：默认、lxml、fast、html、lxml-html、permissive
+- bs4.builder._html5lib.HTML5TreeBuilder：html5、html5lib，
+            也支持html、permissive
+- bs4.builder._htmlparser.HTMLParserTreeBuilder：strict、html.parser，也支持html，
+            其实最后调用的是python自带的http.parse.HTTPParser
+
