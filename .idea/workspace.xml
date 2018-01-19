@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ca33ff9-5c29-417d-9fcc-946358d6b72c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/07-beautifulsoup4/解答课/xpath解答课.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/08-pyquery/正式课/test1.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/06-requests/正式课/requests_test.py" afterPath="$PROJECT_DIR$/06-requests/正式课/requests_test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,6 +16,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/python$requests.coverage" NAME="requests多线程 Coverage Results" MODIFIED="1516196885838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/06-requests/正式课" />
     <SUITE FILE_PATH="coverage/python$xpath.coverage" NAME="xpath Coverage Results" MODIFIED="1516281594951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07-beautifulsoup4/解答课" />
+    <SUITE FILE_PATH="coverage/python$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1516367954033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/08-pyquery/正式课" />
     <SUITE FILE_PATH="coverage/python$test.coverage" NAME="test Coverage Results" MODIFIED="1515852318871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/05-urllib/解答课" />
     <SUITE FILE_PATH="coverage/python$.coverage" NAME="开车 Coverage Results" MODIFIED="1516109298114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/06-requests/解答课" />
     <SUITE FILE_PATH="coverage/python$requests_test.coverage" NAME="requests_test Coverage Results" MODIFIED="1516192315341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/06-requests/正式课" />
@@ -30,13 +32,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bs4_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/07-beautifulsoup4/正式课/bs4_test.py">
+      <file leaf-file-name="test1.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/08-pyquery/正式课/test1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1176">
-              <caret line="138" column="22" lean-forward="false" selection-start-line="138" selection-start-column="22" selection-end-line="138" selection-end-column="22" />
+            <state relative-caret-position="354">
+              <caret line="93" column="32" lean-forward="true" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
               <folding>
-                <element signature="e#43#2819#0" expanded="false" />
+                <element signature="e#0#22#0" expanded="true" />
+                <element signature="e#381#1026#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -45,50 +48,8 @@
       <file leaf-file-name="requests_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/06-requests/正式课/requests_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2712">
-              <caret line="115" column="67" lean-forward="false" selection-start-line="115" selection-start-column="67" selection-end-line="115" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="requests多线程.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/06-requests/正式课/requests多线程.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="requests_test_fromteacher.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/06-requests/正式课/requests_test_fromteacher.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3408">
-              <caret line="142" column="27" lean-forward="false" selection-start-line="142" selection-start-column="22" selection-end-line="142" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xpath解答课.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/07-beautifulsoup4/解答课/xpath解答课.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beautifulsoup4学习.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/07-beautifulsoup4/正式课/beautifulsoup4学习.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="96" />
+            <state relative-caret-position="426">
+              <caret line="129" column="9" lean-forward="false" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -154,7 +115,6 @@
         <option value="$PROJECT_DIR$/05-urllib/解答课/git.html" />
         <option value="$PROJECT_DIR$/05-urllib/解答课/作业解答2.py" />
         <option value="$PROJECT_DIR$/06-requests/正式课/requests介绍.txt" />
-        <option value="$PROJECT_DIR$/06-requests/正式课/requests_test.py" />
         <option value="$PROJECT_DIR$/06-requests/解答课/test.py" />
         <option value="$PROJECT_DIR$/06-requests/解答课/requests.test.py" />
         <option value="$PROJECT_DIR$/06-requests/解答课/requests_demo.py" />
@@ -165,6 +125,8 @@
         <option value="$PROJECT_DIR$/06-requests/正式课/requests多线程.py" />
         <option value="$PROJECT_DIR$/06-requests/正式课/requests_test_fromteacher.py" />
         <option value="$PROJECT_DIR$/07-beautifulsoup4/解答课/xpath.py" />
+        <option value="$PROJECT_DIR$/08-pyquery/正式课/test1.py" />
+        <option value="$PROJECT_DIR$/06-requests/正式课/requests_test.py" />
       </list>
     </option>
   </component>
@@ -209,20 +171,18 @@
             <path>
               <item name="python爬虫基础" type="b2602c69:ProjectViewProjectNode" />
               <item name="python爬虫基础" type="462c0819:PsiDirectoryNode" />
-              <item name="07-beautifulsoup4" type="462c0819:PsiDirectoryNode" />
+              <item name="06-requests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="python爬虫基础" type="b2602c69:ProjectViewProjectNode" />
               <item name="python爬虫基础" type="462c0819:PsiDirectoryNode" />
-              <item name="07-beautifulsoup4" type="462c0819:PsiDirectoryNode" />
-              <item name="正式课" type="462c0819:PsiDirectoryNode" />
+              <item name="08-pyquery" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="python爬虫基础" type="b2602c69:ProjectViewProjectNode" />
               <item name="python爬虫基础" type="462c0819:PsiDirectoryNode" />
-              <item name="07-beautifulsoup4" type="462c0819:PsiDirectoryNode" />
+              <item name="08-pyquery" type="462c0819:PsiDirectoryNode" />
               <item name="正式课" type="462c0819:PsiDirectoryNode" />
-              <item name="老师" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="python爬虫基础" type="b2602c69:ProjectViewProjectNode" />
@@ -261,25 +221,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.xpath">
-    <configuration name="参数" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/06-requests/解答课" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python爬虫基础" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/06-requests/解答课/参数.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.test1">
     <configuration name="解答" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -388,6 +330,24 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/08-pyquery/正式课" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python爬虫基础" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/08-pyquery/正式课/test1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="xpath" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -408,18 +368,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.requests_test" />
-      <item index="1" class="java.lang.String" itemvalue="Python.参数" />
-      <item index="2" class="java.lang.String" itemvalue="Python.bs4_test" />
-      <item index="3" class="java.lang.String" itemvalue="Python.requests多线程" />
-      <item index="4" class="java.lang.String" itemvalue="Python.xpath" />
+      <item index="1" class="java.lang.String" itemvalue="Python.bs4_test" />
+      <item index="2" class="java.lang.String" itemvalue="Python.requests多线程" />
+      <item index="3" class="java.lang.String" itemvalue="Python.xpath" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test1" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.xpath" />
-        <item index="1" class="java.lang.String" itemvalue="Python.requests多线程" />
-        <item index="2" class="java.lang.String" itemvalue="Python.bs4_test" />
-        <item index="3" class="java.lang.String" itemvalue="Python.requests_test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.参数" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test1" />
+        <item index="1" class="java.lang.String" itemvalue="Python.xpath" />
+        <item index="2" class="java.lang.String" itemvalue="Python.requests多线程" />
+        <item index="3" class="java.lang.String" itemvalue="Python.bs4_test" />
+        <item index="4" class="java.lang.String" itemvalue="Python.requests_test" />
       </list>
     </recent_temporary>
   </component>
@@ -438,14 +398,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1684435" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1684435" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36452666" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36452666" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40369967" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -499,34 +460,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/urllib3/connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="325" column="0" lean-forward="false" selection-start-line="325" selection-start-column="0" selection-end-line="325" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/urllib3/util/ssl_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="328" column="0" lean-forward="false" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/03-爬虫工具/正式课/爬虫工具.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04-抓包工具2/正式课/爬虫工具">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-546">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/04-抓包工具2/解答课/weibo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -798,20 +731,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/06-requests/正式课/requests_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2712">
-          <caret line="115" column="67" lean-forward="false" selection-start-line="115" selection-start-column="67" selection-end-line="115" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/06-requests/正式课/requests多线程.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#0#16#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -829,6 +754,49 @@
         <state relative-caret-position="528">
           <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python3/Lib/site-packages/pyquery/cssselectpatch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1584">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python3/Lib/site-packages/pyquery/pyquery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-678">
+          <caret line="84" column="4" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/06-requests/正式课/requests_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="129" column="9" lean-forward="false" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/08-pyquery/正式课/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="93" column="32" lean-forward="true" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#381#1026#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
