@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ca33ff9-5c29-417d-9fcc-946358d6b72c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/10-mysql/解答课/test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/11-微信网页版分析/正式课/change_headers.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/11-微信网页版分析/正式课/wechat.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="2ca33ff9-5c29-417d-9fcc-946358d6b72c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
