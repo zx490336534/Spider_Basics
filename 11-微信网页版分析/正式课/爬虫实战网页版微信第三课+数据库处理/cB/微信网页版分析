@@ -1,0 +1,51 @@
+一、抓包
+使用浏览器登录微信网页版，并且使用抓包工具抓取通讯数据包
+
+二、分析
+1、https://login.wx.qq.com/jslogin?appid=wx782c26e4c19acffb&redirect_uri=https%3A%2F%2Fwx.qq.com%2Fcgi-bin%2Fmmwebwx-bin%2Fwebwxnewloginpage&fun=new&lang=zh_CN&_=1516944073636
+获取uuid
+
+2、https://login.weixin.qq.com/qrcode/QcAZKkRY5w==
+使用uuid，获取登录二维码
+
+3、https://login.wx.qq.com/cgi-bin/mmwebwx-bin/login?loginicon=true&uuid=QcAZKkRY5w==&tip=0&r=-820624599&_=1516944073638
+获取登录状态
+未扫描，服务器会阻塞请求，不返回
+201，扫描但是未点击 登录
+200, 成功登录，获取 redirect_uri = 'https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxnewloginpage?ticket=ATMTtE8uQu20B7LpBAMxvXI6@qrticket_0&uuid=QcAZKkRY5w==&lang=zh_CN&scan=1516944081'
+
+4、上个页面的redirect_uri
+获取skey、wxsid、wxuin、pass_ticket
+
+5、https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxinit?r=-820618207&pass_ticket=Ey8JzuADExkbElXHjbjyMTfzrIQYMNoqnzHT28%252Bedx5YB3WVXXmObKVoqSW%252BrPRc
+初始化微信，获取账号的相关数据、微信群的部分数据，还有SyncKey、sync_key
+
+6、https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxstatusnotify?pass_ticket=Ey8JzuADExkbElXHjbjyMTfzrIQYMNoqnzHT28%252Bedx5YB3WVXXmObKVoqSW%252BrPRc
+访问通知页面
+
+7、https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxgetcontact?pass_ticket=Ey8JzuADExkbElXHjbjyMTfzrIQYMNoqnzHT28%252Bedx5YB3WVXXmObKVoqSW%252BrPRc&r=1516944082337&seq=0&skey=@crypt_3acdc59_c7dda4f827700fcdaf1bc55677d4f228
+获取微信联系人，包括公众号，好友，群等
+
+8、https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxbatchgetcontact?type=ex&r=1516944082390&pass_ticket=Ey8JzuADExkbElXHjbjyMTfzrIQYMNoqnzHT28%252Bedx5YB3WVXXmObKVoqSW%252BrPRc
+批量获取未获取完的联系人，主要是群和群成员
+
+9、https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1516944082339&skey=%40crypt_3acdc59_c7dda4f827700fcdaf1bc55677d4f228&sid=gtvjXN%2F5JbhE3ShX&uin=1836221420&deviceid=e930485104845454&synckey=1_687753868%7C2_687753895%7C3_687753740%7C1000_1516941481&_=1516944073639
+synccheck 进行同步检测，是否有数据需要更新
+
+10、https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxsync?sid=gtvjXN/5JbhE3ShX&skey=@crypt_3acdc59_c7dda4f827700fcdaf1bc55677d4f228&pass_ticket=Ey8JzuADExkbElXHjbjyMTfzrIQYMNoqnzHT28%252Bedx5YB3WVXXmObKVoqSW%252BrPRc
+webwxsync 获取最新的微信消息，并且更新sync_key
+
+
+三、微信初始化过程全部结束，可以随意发送和接收消息了
+1、发送图片：
+1.1    https://file.wx.qq.com/cgi-bin/mmwebwx-bin/webwxuploadmedia?f=json
+上传图片，如果图片过大，需要分块发送，上传成功则会收到关键的图片标识：MediaId
+
+1.2  https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxsendmsgimg?fun=async&f=json&pass_ticket=Ey8JzuADExkbElXHjbjyMTfzrIQYMNoqnzHT28%252Bedx5YB3WVXXmObKVoqSW%252BrPRc
+使用上一步的 MediaId 发送图片到指定的用户，
+
+2、发送文字消息：
+https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxsendmsg?pass_ticket=Ey8JzuADExkbElXHjbjyMTfzrIQYMNoqnzHT28%252Bedx5YB3WVXXmObKVoqSW%252BrPRc
+
+PS：另有微信发送视频，发送表情等，给大家留作作业，看是否能够自行补充完整
+

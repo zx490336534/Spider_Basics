@@ -58,9 +58,17 @@ https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxstatreport?fun=new&lang=zh_CN&pass_ti
 暂时不知道
 https://support.weixin.qq.com/cgi-bin/mmsupport-bin/reportforweb?rid=63637&rkey=72&rvalue=75
 提示：一些url请求，如果没有返回值，也没有set-cookie 大概率这个页面是不用理会的
+微信的联系人唯一标示位：Uin，UserName是每次登陆都会变化的一个不重复的值
 
+requests提交请求的参数3种：
+form参数，通过post(data=from参数字典)
+json参数，是通过post(json=json字典)
+url后面的参数，是通过post(params=url参数字典)
 '''
+import json
+import random
 
+import os
 import requests
 import time
 import re
@@ -88,6 +96,7 @@ class WXRobot(object):
         self.s = requests.session()
         self.s.verify = False
         self.s.headers = DEFAULT_HEADERS
+        self.DeviceID = 'e' + str(random.random())[2:17]
 
     def visit_index(self):
         url = 'https://wx.qq.com/'
@@ -158,6 +167,120 @@ class WXRobot(object):
         self.wxuin = bs.find('wxuin').text
         self.pass_ticket = bs.find('pass_ticket').text
         self.isgrayscale = bs.find('isgrayscale').text
+    def get_BaseRequest_content(self):
+        data = {"Uin": self.wxuin,
+                 "Sid": self.wxsid,
+                 "Skey": self.skey,
+                 "DeviceID": self.DeviceID
+                }
+        return data
+
+    def get_BaseRequest(self):
+        data ={"BaseRequest": self.get_BaseRequest_content()
+               }
+        return data
+
+    def visit_webwxinit(self):
+        url = "https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxinit"
+        params = {
+            'r': ~int(time.time()),
+            'lang':'zh_CN',
+            'pass_ticket':self.pass_ticket,
+
+        }
+        r = self.s.post(url,json=self.get_BaseRequest(),params=params)
+        r.encoding = 'utf-8'
+        text = r.text
+        json_data = json.loads(text)
+        self.my_account = json_data['User']
+        self.chatSet = json_data['ChatSet']
+        self.group_list = json_data['ContactList']
+        print('登陆用户为：%s' % (self.my_account['NickName']))
+
+    def visit_statusnotify(self):
+        url = 'https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxstatusnotify?lang=zh_CN&pass_ticket=%s' % self.pass_ticket
+        data = {
+            "BaseRequest": self.get_BaseRequest_content(),
+             "Code": 3,
+             "FromUserName": self.my_account['UserName'],
+             "ToUserName": self.my_account['UserName'],
+             "ClientMsgId": int(get_13_time())
+
+        }
+        self.s.post(url,json=data)
+
+        print('visit_statusnotify获取完成')
+
+    def visit_getcontace(self):
+        url = 'https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxgetcontact'
+        params = {
+        'lang': 'zh_CN',
+        'pass_ticket': self.pass_ticket,
+        'r': get_13_time(),
+        'seq': '0',
+        'skey': self.skey
+            }
+        r = self.s.get(url,params=params)
+        r.encoding('utf-8')
+        json_data = r.json()
+        self.member_list = json_data['MemberList']
+        print('visit_getcontace获取完成')
+
+    def visit_batchgetcontact(self):
+        url = 'https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxbatchgetcontact'
+        params = {
+            'type':'ex',
+            'r':get_13_time(),
+            'lang':'zh_CN',
+            'pass_ticket':self.pass_ticket
+        }
+        chat_list = self.chatSet.split(',')
+        chat_list.remove('filehelper')
+        chat_list_new = [{'UserName':c.strip(),'EncryChatRoomId':''}for c in chat_list if c.startswith('@')]
+        data = {
+            "BaseRequest": self.get_BaseRequest_content(),
+            "Count": 19,
+            "List":chat_list_new
+
+        }
+        r = self.s.post(url,params=params)
+        r.encoding='UTF-8'
+        json_data = r.json()
+        self.group_contract_list = json_data['ContactList']
+
+    def get_LocalId(self):
+        return str(time.time())+str(random.random())[2:9]
+
+
+    def send_msg(self,msg,to_user_name='filehelper'):
+        url = 'https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxsendmsg'
+        data = {
+	"BaseRequest":self.get_BaseRequest_content(),
+	"Msg": {
+		"Type": 1,
+		"Content": msg,
+		"FromUserName": self.my_account['UserName'],
+		"ToUserName": to_user_name,
+		"LocalID": self.get_LocalId(),
+		"ClientMsgId": self.get_LocalId()
+	},
+	    "Scene": 0
+    }
+        data = json.dumps(data,ensure_ascii=False).encode('utf-8')
+        r =self.s.post(url,data)
+        json_data = r.json()
+        if 0 == json_data['BaseResponse']['Ret']:
+            print('发送消息成功')
+        else:
+            print('发送消息失败 %s' % r.text)
+
+
+    def upload_img(self,pic_path):
+        pass
+
+    def send_img(self,to_user_name='filehelper'):
+        pass
+
 
 
 
@@ -169,6 +292,11 @@ if __name__ == '__main__':
     b = wx.visit_login()
     if b:
         wx.visit_newloginpage()
+        wx.visit_webwxinit()
+        wx.visit_statusnotify()
+        wx.visit_batchgetcontact()
+        wx.send_msg('测试发送！！！')
+
     print('登陆结束')
 
 

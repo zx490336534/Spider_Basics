@@ -1,0 +1,74 @@
+1、https://wx.qq.com/
+首页
+
+漏掉的一步：
+https://login.wx.qq.com/jslogin?appid=wx782c26e4c19acffb&redirect_uri=https%3A%2F%2Fwx.qq.com%2Fcgi-bin%2Fmmwebwx-bin%2Fwebwxnewloginpage&fun=new&lang=zh_CN&_=1516970129486
+获取第二步发送二维码的url中path的最后一部分gZ8rxjEzKg==
+
+2、https://login.weixin.qq.com/qrcode/gZ8rxjEzKg==
+二维码
+
+3、https://login.wx.qq.com/cgi-bin/mmwebwx-bin/login?loginicon=true&uuid=gZ8rxjEzKg==&tip=0&r=-846684951&_=1516970129488
+得到一个rediret_uri
+
+4、https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxnewloginpage?ticket=AQWLK8ZbGCbF0Yg9d3jezw8a@qrticket_0&uuid=gZ8rxjEzKg==&lang=zh_CN&scan=1516970142&fun=new&version=v2
+访问第三步得到的redirect_uri
+
+等待二维码被成功扫描并且点击确认 登录，估计是在第3,4步已经确认过了
+
+5、https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxinit?r=-846674009&pass_ticket=QnXi7Lls9Tw8t2N9q0fJ%252BvRiVJrxv2ncWRxikXhP79hWUGPtKlOdP%252FM8iCB3jc5A
+初始化微信，获得联系人列表
+
+6、https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxstatusnotify?pass_ticket=QnXi7Lls9Tw8t2N9q0fJ%252BvRiVJrxv2ncWRxikXhP79hWUGPtKlOdP%252FM8iCB3jc5A
+得到了一个MsgID
+
+7、https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxgetcontact?pass_ticket=QnXi7Lls9Tw8t2N9q0fJ%252BvRiVJrxv2ncWRxikXhP79hWUGPtKlOdP%252FM8iCB3jc5A&r=1516970142918&seq=0&skey=@crypt_3acdc59_cab8f525cd16747389e8bf94e077b1e4
+获取联系人列表
+
+8、https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1516970142920&skey=%40crypt_3acdc59_cab8f525cd16747389e8bf94e077b1e4&sid=1AeWIyFuWkLUAyO%2F&uin=1836221420&deviceid=e031884059130803&synckey=1_687753868%7C2_687754251%7C3_687753740%7C1000_1516961762&_=1516970129489
+同步确认，
+没有消息时，服务器阻塞25秒返:window.synccheck = {
+	retcode: "0",
+	selector: "0"
+}
+有消息时，服务器返回：window.synccheck = {
+	retcode: "0",
+	selector: "2"
+}
+再通过webwxsync访问得到具体的消息内容
+
+9、https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxbatchgetcontact?type=ex&r=1516970143043&pass_ticket=QnXi7Lls9Tw8t2N9q0fJ%252BvRiVJrxv2ncWRxikXhP79hWUGPtKlOdP%252FM8iCB3jc5A
+获取微信群的成员列表
+
+10、https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxsync?sid=1AeWIyFuWkLUAyO/&skey=@crypt_3acdc59_cab8f525cd16747389e8bf94e077b1e4&pass_ticket=QnXi7Lls9Tw8t2N9q0fJ%252BvRiVJrxv2ncWRxikXhP79hWUGPtKlOdP%252FM8iCB3jc5A
+获取服务器最近的消息
+
+11、https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxsendmsg?pass_ticket=QnXi7Lls9Tw8t2N9q0fJ%252BvRiVJrxv2ncWRxikXhP79hWUGPtKlOdP%252FM8iCB3jc5A
+发送文字消息
+
+12、https://file.wx.qq.com/cgi-bin/mmwebwx-bin/webwxuploadmedia?f=json
+这个options 方法
+
+13、https://file.wx.qq.com/cgi-bin/mmwebwx-bin/webwxuploadmedia?f=json
+post方法
+上传图片文件
+
+14、https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxsendmsgimg?fun=async&f=json&pass_ticket=QnXi7Lls9Tw8t2N9q0fJ%252BvRiVJrxv2ncWRxikXhP79hWUGPtKlOdP%252FM8iCB3jc5A
+发送图片消息
+
+保留url：
+1、https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxstatreport?fun=new&pass_ticket=QnXi7Lls9Tw8t2N9q0fJ%252BvRiVJrxv2ncWRxikXhP79hWUGPtKlOdP%252FM8iCB3jc5A
+无意义的包
+
+2、https://support.weixin.qq.com/cgi-bin/mmsupport-bin/reportforweb?rid=69373&rkey=9&rvalue=1
+暂时不知道有没有意义
+
+提示：
+1、部分url请求，如果没有返回值，也没有set-cookie，大概率这个页面是可以不用理会的
+2、如果确认headers和参数，cookies都和抓包一样，但是就是得不到正确的response，那么可以尝试设置
+    allow_redirects = False，不自动跳转，看能否取到想要的值
+3、微信的联系人唯一标识位：Uin， UserName是每次登陆都会变化的一个不重复的值
+4、requests提交请求的参数3种：
+4.1 form参数：是通过post(data=form参数字典)
+4.2 json参数：是通过post(json=json字典)
+4.3 url后面的参数：是通过post(params=url参数字典)
